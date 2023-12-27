@@ -1,0 +1,3 @@
+[submodule "denial-of-service/auction/lib/forge-std"]
+	path = denial-of-service/auction/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
