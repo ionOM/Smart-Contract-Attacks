@@ -1,4 +1,4 @@
-# Reentrancy Attack Description
+# Reentrancy Attack
 
 ## Overview
 
@@ -64,3 +64,19 @@ function withdrawBalance() public {
 ```
 
 By adhering to this pattern, developers can significantly reduce the risk of reentrancy vulnerabilities in their smart contracts.
+
+## Installation 🛠️
+
+1. Clone the repository:
+```shell
+git clone https://github.com/ionOM/smart-contract-attacks.git
+```
+
+2. Move to the example-1 folder:
+```shell
+cd smart-contract-attacks/reentrancy/example-1
+```
+3. When you are in the example-1 folder, type in the console:
+```shell
+forge test -vvv
+```
