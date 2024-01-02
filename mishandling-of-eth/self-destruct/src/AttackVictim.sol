@@ -3,7 +3,7 @@ pragma solidity 0.8.20;
 
 import {Victim} from "src/Victim.sol";
 
-contract AttackSelfDestructMe {
+contract AttackVictim {
     Victim target;
 
     constructor(Victim _target) payable {
