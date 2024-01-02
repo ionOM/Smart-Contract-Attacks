@@ -7,3 +7,6 @@
 [submodule "reentrancy/example-1/lib/forge-std"]
 	path = reentrancy/example-1/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "mishandling-of-eth/self-destruct/lib/forge-std"]
+	path = mishandling-of-eth/self-destruct/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
