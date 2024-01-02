@@ -1,8 +1,8 @@
-### Mishandling of Ethereum
+# Mishandling of Ethereum
 
 The provided Solidity smart contracts demonstrate a vulnerability that can lead an attack on the `Victim` contract. The vulnerability lies in the `withdraw` function of the `Victim` contract.
 
-#### `Victim` Contract
+## `Victim` Contract
 
 The `Victim` contract has a `withdraw` function with the following problematic line:
 
@@ -12,7 +12,7 @@ require(address(this).balance == totalDeposits); // bad
 
 This line checks whether the contract's current ETH balance is equal to the `totalDeposits` variable. The intention seems to be to ensure that the contract only allows withdrawals when the ETH balance matches the total deposits made. However, this check is flawed and can be exploited.
 
-#### Exploitation through `AttackVictim` Contract
+## Exploitation through `AttackVictim` Contract
 
 The attacker deploys an `AttackVictim` contract, initialized with the `Victim` contract as the target. The `AttackVictim` contract contains an `attack` function that triggers a `selfdestruct` to the target `Victim` contract, effectively sending all the funds to the `Victim` contract.
 
@@ -22,7 +22,7 @@ function attack() external payable {
 }
 ```
 
-#### Attack Process
+## Attack Process
 
 1. **User Deposits to Victim:**
    - An external user initiates a deposit of 1 Ether to the `Victim` contract using the `hoax` function.
@@ -45,7 +45,7 @@ function attack() external payable {
 6. **Denial-of-Service (DoS):**
    - The user is unable to withdraw their funds, resulting in a DoS situation where legitimate users are prevented from accessing their deposited funds.
 
-### Mitigation
+## Mitigation
 
 To address this vulnerability, the `withdraw` function in the `Victim` contract should be modified to use a `>=` check instead of `==`:
 
