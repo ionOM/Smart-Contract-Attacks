@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
-contract MishandlingOfEth {
+contract Victim {
     address[] public entrants;
     uint256 public constant AMOUNT = 1 ether;
 
